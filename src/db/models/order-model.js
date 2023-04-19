@@ -1,4 +1,4 @@
 const mongoose = require("mongoose");
-import OrderSchema from "../schemas/order";
+import OrderSchema from "../schemas/order-schema";
 
 export default mongoose.model("Order", OrderSchema);
