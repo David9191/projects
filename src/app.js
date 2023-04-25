@@ -6,8 +6,6 @@ import {
   productRouter,
   orderRouter,
 } from './routers/index.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 const app = express();
 

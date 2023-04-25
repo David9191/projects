@@ -1,6 +1,5 @@
 const iconAddress = '../../mainPage/icon';
-
-export default [
+const categories = [
   {
     type: 'TV',
     iconSrc: `${iconAddress}/television.png`,
@@ -27,3 +26,7 @@ export default [
     copyRight: 'Safaruly - Flaticon',
   },
 ];
+
+export function getCategory() {
+  return categories;
+}

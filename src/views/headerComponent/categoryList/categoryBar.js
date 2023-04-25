@@ -1,4 +1,4 @@
-import { categories } from './categories.js';
+import { getCategory } from './categories.js';
 
 async function addCategoryBar() {
   await makeCategoryBar();
@@ -19,6 +19,7 @@ async function addCategoryBar() {
 }
 
 function makeCategoryBar() {
+  const categories = getCategory();
   const headerContainer = document.getElementById('header-container');
   const headerLogo = document.querySelector('.header-logo');
   const container = document.createElement('div');
@@ -45,7 +46,7 @@ function makeCategoryBar() {
     `
   );
 
-  categories.map(({ type, iconSrc }) => {
+  categories.forEach(({ type, iconSrc }) => {
     container.insertAdjacentHTML(
       `beforeend`,
       `<div class="category-item">
