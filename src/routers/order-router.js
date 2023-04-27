@@ -40,7 +40,7 @@ orderRouter.post('/', async (req, res, next) => {
 
     res.status(201).json(order);
   } catch (err) {
-    next(err);
+    res.status(500).send('주문을 실패하였습니다');
   }
 });
 
