@@ -56,7 +56,7 @@ userRouter.post('/signin', async (req, res, next) => {
 
     console.log('signinResult : ', signinResult);
     // jwt 토큰 쿠키 저장
-    res.cookie('jwtToken', signinResult.token, { httpOnly: true });
+    res.cookie('jwtToken', signinResult.token, { httpOnly: false });
     res.status(200).json(signinResult);
     //res.redirect('/');
   } catch (error) {
@@ -68,7 +68,7 @@ userRouter.post('/signin', async (req, res, next) => {
 userRouter.post('/signout', signinRequired, async (req, res) => {
   // jwt 토큰 쿠키를 없앰으로써 로그아웃
   res.clearCookie('jwtToken');
-  res.redirect('/signIn');
+  res.redirect('/');
 });
 
 // 이메일 중복 조회

@@ -56,7 +56,6 @@ export function moveToCategoryBySelectBox(categoryId) {
 
 export function moveToOtherByHeader() {
   moveToHome();
-  moveToLogin();
   moveToMyPage();
   moveToCart();
   moveToCategoryByBar();
