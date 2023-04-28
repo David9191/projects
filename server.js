@@ -12,7 +12,9 @@ mongoose
     'mongodb+srv://seob:jzMhgv91ByD3xTpZ@techmate.qp6i8fm.mongodb.net/techmate'
   )
   .then(() => {
-    console.log('mongo db connected!');
+    console.log(
+      'mongodb+srv://seob:jzMhgv91ByD3xTpZ@techmate.qp6i8fm.mongodb.net/techmate'
+    );
   });
 
 app.listen(port, () => {

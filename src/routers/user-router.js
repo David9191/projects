@@ -86,8 +86,8 @@ userRouter.post('/signup/check-email-duplication', async (req, res, next) => {
 //토큰 디코드(복호화)
 userRouter.post('/token-decode', async (req, res, next) => {
   try {
-    const { jwtToken } = req.cookies;
-    const getTokenDecode = await userService.getDecodeToken(jwtToken);
+    const { token } = req.body;
+    const getTokenDecode = await userService.getDecodeToken(token);
 
     res.status(200).json(getTokenDecode);
   } catch (error) {
@@ -120,7 +120,7 @@ userRouter.post('/password-check', signinRequired, async (req, res, next) => {
     }
 
     // req (request) 에서 데이터 가져오기
-    const { userId } = req;
+    const { userId } = req.body;
     const { password } = req.body;
 
     // 비밀번호가 알맞는지 여부를 체크함
